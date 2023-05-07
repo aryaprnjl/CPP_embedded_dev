@@ -1,11 +1,11 @@
-# Makefile to build target application from <ROOT>/test_applications
+# Makefile to build target application from <ROOT>/cpp_applications
 ifneq ($(CI),true)
     LD:=arm-none-eabi-gcc
 endif
 
 APP?=uart
-APPDIR=$(ROOT_FOLDER)/test_applications/build/$(APP)
-OBJDIR=$(ROOT_FOLDER)/test_applications/build/$(APP)/generated_files
+APPDIR=$(ROOT_FOLDER)/cpp_applications/build/$(APP)
+OBJDIR=$(ROOT_FOLDER)/cpp_applications/build/$(APP)/generated_files
 
 CFLAGS+=-Wall -Wextra -Werror -DSTM32L476xx -Wno-unused-parameter
 ifneq ($(CI),true)
@@ -24,13 +24,13 @@ LFLAGS+=-static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -W
 INCLUDES=-I$(ROOT_FOLDER)/stm_files/driver/BSP/STM32L4xx_Nucleo -I$(ROOT_FOLDER)/stm_files/driver/CMSIS/Device/ST/STM32L4xx/Include
 INCLUDES+=-I$(ROOT_FOLDER)/stm_files/driver/CMSIS/Include -I$(ROOT_FOLDER)/stm_files/driver/STM32L4xx_HAL_Driver/Inc
 INCLUDES+=-I$(ROOT_FOLDER)/stm_files/driver/STM32L4xx_HAL_Driver/Inc/Legacy -I$(ROOT_FOLDER)/stm_files/driver
-INCLUDES+=-I$(ROOT_FOLDER)/test_applications/$(APP)
+INCLUDES+=-I$(ROOT_FOLDER)/cpp_applications/$(APP)
 
 SRCS=$(wildcard $(ROOT_FOLDER)/stm_files/driver/BSP/STM32L4xx_Nucleo/*.c)
 SRCS+=$(wildcard $(ROOT_FOLDER)/stm_files/driver/STM32L4xx_HAL_Driver/Src/*.c)
 SRCS+=$(wildcard $(ROOT_FOLDER)/stm_files/driver/*.c)
-SRCS+=$(wildcard $(ROOT_FOLDER)/test_applications/$(APP)/*.c)
-SRCCPPS=$(wildcard $(ROOT_FOLDER)/test_applications/$(APP)/*.cpp)
+SRCS+=$(wildcard $(ROOT_FOLDER)/cpp_applications/$(APP)/*.c)
+SRCCPPS=$(wildcard $(ROOT_FOLDER)/cpp_applications/$(APP)/*.cpp)
 
 ASSM+=$(wildcard $(ROOT_FOLDER)/stm_files/bsp/*.s)
 

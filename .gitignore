@@ -66,9 +66,10 @@ dkms.conf
 
 # Project dev env
 .vscode/
+.bak
 
-# test application builds
-test_applications/build/
+# cpp application builds
+cpp_applications/build/
 
 # Dependencies
 stm_files/
