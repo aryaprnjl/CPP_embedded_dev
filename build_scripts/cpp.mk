@@ -24,12 +24,11 @@ LFLAGS+=-static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -W
 INCLUDES=-I$(ROOT_FOLDER)/stm_files/driver/BSP/STM32L4xx_Nucleo -I$(ROOT_FOLDER)/stm_files/driver/CMSIS/Device/ST/STM32L4xx/Include
 INCLUDES+=-I$(ROOT_FOLDER)/stm_files/driver/CMSIS/Include -I$(ROOT_FOLDER)/stm_files/driver/STM32L4xx_HAL_Driver/Inc
 INCLUDES+=-I$(ROOT_FOLDER)/stm_files/driver/STM32L4xx_HAL_Driver/Inc/Legacy -I$(ROOT_FOLDER)/stm_files/driver
-INCLUDES+=-I$(ROOT_FOLDER)/cpp_applications/$(APP)
+INCLUDES+=-I$(ROOT_FOLDER)/cpp_applications/$(APP) -I$(ROOT_FOLDER)/stm_files/bsp
 
 SRCS=$(wildcard $(ROOT_FOLDER)/stm_files/driver/BSP/STM32L4xx_Nucleo/*.c)
 SRCS+=$(wildcard $(ROOT_FOLDER)/stm_files/driver/STM32L4xx_HAL_Driver/Src/*.c)
-SRCS+=$(wildcard $(ROOT_FOLDER)/stm_files/driver/*.c)
-SRCS+=$(wildcard $(ROOT_FOLDER)/cpp_applications/$(APP)/*.c)
+SRCS+=$(wildcard $(ROOT_FOLDER)/stm_files/driver/*.c $(ROOT_FOLDER)/stm_files/bsp/*.c)
 SRCCPPS=$(wildcard $(ROOT_FOLDER)/cpp_applications/$(APP)/*.cpp)
 
 ASSM+=$(wildcard $(ROOT_FOLDER)/stm_files/bsp/*.s)
