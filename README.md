@@ -10,7 +10,7 @@ Commands:
 - **Dissassemble** :`<PATH OF PROJECT'S ROOT FOLDER>`/build_scripts/build.sh disass `APP` `FUNCTION`
 
 _Note:_
-- _`APP` can be selected from cpp_applications directory. e.g. uart_
+- _`APP` can be selected from cpp_applications directory. e.g. random_num_gen_
 - _`FUNCTION` can be any function in the project. e.g. main_
 
 Documents related to STM32L476RG:
