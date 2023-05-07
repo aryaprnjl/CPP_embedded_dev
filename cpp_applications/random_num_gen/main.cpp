@@ -1,10 +1,11 @@
+#include <cstdlib>
 class Student {  
    public:  
       int id;
 };  
-int first() {  
+int first() {
     Student s1;
-    s1.id = 201;    
+    s1.id = rand();
     return s1.id;  
 }
 extern "C"
