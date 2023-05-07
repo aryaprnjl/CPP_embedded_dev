@@ -9,7 +9,7 @@ int first() {
 }
 extern "C"
 {
-	int getcppdata()
+	int main()
 	{
 		return first();
 	}
