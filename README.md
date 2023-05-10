@@ -1,5 +1,13 @@
 # Embedded development using C++
-Embedded development using C++.
+
+### Topics covered so far:
+
+| # | Topic |
+|---| ----- |
+|4| [Function overloading](./cpp_applications/func_overloading/app.cpp)|
+|3| [Default argument](./cpp_applications/default_arg/app.cpp)|
+|2| [Reference variable](./cpp_applications/ref_var/app.cpp)|
+|1| [Random number generation](./cpp_applications/random_num_gen/app.cpp)|
 
 Commands:
 - **Clean project**:`<PATH OF PROJECT'S ROOT FOLDER>`/build_scripts/build.sh clean
