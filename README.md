@@ -4,6 +4,7 @@
 
 | # | Topic |
 |---| ----- |
+|6| [Class](./cpp_applications/class/app.cpp)|
 |5| [Structures](./cpp_applications/structure/app.cpp)|
 |4| [Function overloading](./cpp_applications/func_overloading/app.cpp)|
 |3| [Default argument](./cpp_applications/default_arg/app.cpp)|
