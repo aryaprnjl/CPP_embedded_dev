@@ -8,6 +8,8 @@
 //          1)Member variables are private by default.
 //          2)Instances of class are called objects.
 
+#include <cstdio>
+
 typedef class book{
     int priv_mem;
 public:
@@ -15,6 +17,15 @@ public:
     void set_pub_mem(int a)
     {
         pub_mem = a;
+    }
+    book add_class_vars(book b)
+    {
+        book b1;
+
+        b1.priv_mem = priv_mem + b.priv_mem;
+        b1.pub_mem = pub_mem + b.pub_mem;
+
+        return b1;
     }
     void inline call_priv_method_by_pub_method(int a);
 private:
@@ -47,6 +58,11 @@ int first()
     // We can't call private methods directly. Private methods can be called only via public methods.
     //b2.set_priv_mem(300);
     b2.call_priv_method_by_pub_method(300);
+
+    book b3,b4;
+
+    b3 = b2;
+    b4 = b3.add_class_vars(b2);
 
     return 1;
 }
