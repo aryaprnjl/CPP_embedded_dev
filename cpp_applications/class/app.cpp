@@ -1,4 +1,14 @@
-// Notes: 18
+// Notes: 18,19,20
+
+// Class is a description of object
+// Object is an instance of a class
+// Members of class can be called instance member variable/attribute/data member/fields/property
+// Functions of class can be called instance member function/method/procedure/action/operation/service
+// Collectively,
+
+// Object state: Collection of object member variable's values
+// If value of any variable gets changed, then we can say object state has changed.
+// As per OOP, object state should get changed by only member functions.
 
 // Class vs Structure
 // Structure:
@@ -61,20 +71,15 @@ int first()
 
     book b3,b4;
 
+    /* We can directly copy member variables in this way */
     b3 = b2;
+
+    /* But, we can't do such following operations. Because it doesn't know how to use these operators on member variables */
+    // b4 = b3+b2;
+    // Instead we need to use such function or operate on individual member varibales */
     b4 = b3.add_class_vars(b2);
 
     return 1;
-}
-
-int area(int a, int b)
-{
-    return (a+b);
-}
-
-float area(int a)
-{
-    return a;
 }
 
 extern "C"
@@ -84,3 +89,4 @@ extern "C"
         return first();
     }
 }
+
