@@ -4,6 +4,7 @@
 
 | # | Topic |
 |---| ----- |
+|7| [Static variables](./cpp_applications/static_var/app.cpp)|
 |6| [Class and operations related to it](./cpp_applications/class/app.cpp)|
 |5| [Structures](./cpp_applications/structure/app.cpp)|
 |4| [Function overloading](./cpp_applications/func_overloading/app.cpp)|
@@ -20,8 +21,8 @@ Commands:
 - **Dissassemble** :`<PATH OF PROJECT'S ROOT FOLDER>`/build_scripts/build.sh disass `APP` `FUNCTION`
 
 _Note:_
-- _`APP` can be selected from cpp_applications directory. e.g. random_num_gen_
-- _`FUNCTION` can be any function in the project. e.g. main_
+- _`APP` can be selected from cpp_applications directory. e.g. `random_num_gen`_
+- _`FUNCTION` can be any function in the project. e.g. `main`_
 
 Documents related to STM32L476RG:
 
