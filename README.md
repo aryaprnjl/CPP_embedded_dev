@@ -4,7 +4,7 @@
 
 | # | Topic |
 |---| ----- |
-|7| [Static variables](./cpp_applications/static_var/app.cpp)|
+|7| [Static variables and functions](./cpp_applications/static_var_func/app.cpp)|
 |6| [Class and operations related to it](./cpp_applications/class/app.cpp)|
 |5| [Structures](./cpp_applications/structure/app.cpp)|
 |4| [Function overloading](./cpp_applications/func_overloading/app.cpp)|
