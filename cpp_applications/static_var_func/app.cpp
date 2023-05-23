@@ -1,4 +1,4 @@
-// Notes: 21
+// Notes: 21,22,23
 
 // Static varibales: same as in C, by default initialized to 0, lifetime is throughout the program
 
@@ -30,9 +30,16 @@ void func(int x1, int y1)
 // Any object can use the same copy of class variable
 // They are known as class member variable also
 typedef class book{
+private:
     // Instance member variable
     int priv_mem;
-    // Static member variable  / class variable
+    // Static member variable / class variable
+    // Private static member can't be accessed from outside. We can only access public static member variable
+    // We can access private members by instance member functions only. But to call instance member function, we need an object.
+    // But static member variable doesn't need object. So, we can use static member function to access static member variable.
+    // Static member function can access only static member variables. Those are called class member function
+    // Static member can be invoked with/without object
+    // Normal member function can access both static and normal instance member variables
     static int static_priv_mem;
 public:
     int pub_mem;
@@ -41,6 +48,7 @@ public:
     {
         pub_mem = a;
     }
+    static void set_static_priv_mem(int a);
     void inline call_priv_method_by_pub_method(int a);
 private:
     void set_priv_mem(int);
@@ -49,11 +57,19 @@ private:
 // If we do not declare these static variables in following lines, then these variables won't get created. They will be optimized out.
 // These variables will get memory after these lines
 // These variables' memory doesn't depend on objects. Because of this reason, they are called class variables, not instance variables. It doesn't belong to instance
-int book::static_priv_mem = 100;
+// Even if we don't create any object, still static_priv_mem and static_pub_mem variables will exist
+int book::static_priv_mem;
 int book::static_pub_mem = 200;
 // If we don't assign any values, then by default they have value 0
 //int book::static_priv_mem;
 //int book::static_pub_mem;
+
+// Static member function declaration
+// ( https://stackoverflow.com/questions/31305717/member-function-with-static-linkage )
+void book::set_static_priv_mem(int a)
+{
+    static_priv_mem = a;
+}
 
 // All methods are inline by default. But if some function is declared outside, then we need to explicitely use inline.
 void inline book::call_priv_method_by_pub_method(int a)
@@ -83,6 +99,9 @@ int first()
 
     /* We can directly copy member variables in this way */
     b3 = b2;
+
+    // Static member function can be called this way without object
+    book::set_static_priv_mem(800);
 
     return 1;
 }
