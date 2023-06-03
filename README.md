@@ -4,6 +4,7 @@
 
 | # | Topic |
 |---| ----- |
+|8| [Copy constructor](./cpp_applications/copy_constructor/app.cpp)|
 |8| [Constructor](./cpp_applications/constructor/app.cpp)|
 |7| [Static variables and functions](./cpp_applications/static_var_func/app.cpp)|
 |6| [Class and operations related to it](./cpp_applications/class/app.cpp)|

@@ -53,7 +53,9 @@ elif [[ $1 == debug ]];then
 #    -ex "source -v $ROOT_FOLDER/build_scripts/gdb_cmd"
 elif [[ $1 == disass ]];then
     get_dep
-    make --no-print-directory -C $ROOT_FOLDER/build_scripts APP=$2 ROOT_FOLDER=$ROOT_FOLDER CI=$CI FUNC=$3 disass
+    if [[ ! -f $ROOT_FOLDER/cpp_applications/build/$2/$2.elf ]]; then
+        make --no-print-directory -C $ROOT_FOLDER/build_scripts APP=$2 ROOT_FOLDER=$ROOT_FOLDER CI=$CI FUNC=$3 disass
+    fi
 elif [[ $1 == clean ]];then
     find . -name '*.o' -exec rm -r {} \;
     find . -name '*.d' -exec rm -r {} \;
