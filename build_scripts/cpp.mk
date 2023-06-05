@@ -1,6 +1,6 @@
 # Makefile to build target application from <ROOT>/cpp_applications
 ifneq ($(CI),true)
-    LD:=arm-none-eabi-gcc
+    LD:=arm-none-eabi-g++
 endif
 
 APP?=uart
